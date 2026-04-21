@@ -79,7 +79,10 @@ function LoginScreen({ onLogin }) {
   const [showPass, setShowPass] = useState(false);
 
   const handleLogin = () => {
-    if (id.toLowerCase().trim() === "mahima" && pass === "rasmalai") {
+    const normalizedId = id.toLowerCase().trim();
+    const normalizedPass = pass.toLowerCase().trim();
+
+    if (normalizedId === "mahima" && normalizedPass === "rasmalai") {
       onLogin();
     } else {
       setError("Hmm that's not right 🤔 Try again!");
